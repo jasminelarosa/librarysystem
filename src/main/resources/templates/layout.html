@@ -143,17 +143,18 @@
                 <span class="menu-title">Books/Computer</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" th:href="@{/books/addbook}">
-                <i class="menu-icon mdi mdi-book"></i>
-                <span class="menu-title">Add Book</span>
-              </a>
-            </li>
+
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link" th:href="@{/books/addbook}">-->
+<!--                <i class="menu-icon mdi mdi-book"></i>-->
+<!--                <span class="menu-title">Add Book</span>-->
+<!--              </a>-->
+<!--            </li>-->
 
             <li class="nav-item">
               <a class="nav-link" th:href="@{/books/uservalidation}">
                 <i class="menu-icon fa fa-user-o"></i>
-                <span class="menu-title"> User Info</span>
+                <span class="menu-title">User Info</span>
               </a>
             </li>
 
@@ -170,6 +171,30 @@
                 </ul>
               </div>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#books" aria-expanded="false" aria-controls="books">
+                <i class="menu-icon mdi mdi-account-circle-outline"></i>
+                <span class="menu-title">Books</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="books">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" th:href="@{/books/addbook}">
+                      <span class="menu-title">Book Status</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" th:href="@{/books/addbook}">
+                      <span class="menu-title">Add Book</span>
+                    </a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link" th:href="@{/books/register}"> Register </a></li>
+                </ul>
+              </div>
+            </li>
+
           </ul>
         </nav>
         <!-- partial -->

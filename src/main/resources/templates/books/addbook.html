@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
       layout:decorate="~{layout}">
 <head>
     <title>Add Book</title>
@@ -10,34 +10,39 @@
     <div class="col-md-6 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Book details</h4>
 
-                <form class="forms-sample" >
+                <h4 class="card-title">Book details</h4>
+                <form class="forms-sample" th:action="@{addbook}" th:object="${book}" method="post">
+                    <div th:if="${bookAdded}" style="color: green;">Successfully Added!</div>
+                    <div th:if="${bookExist}" style="color: red;">Book already exist!</div>
                     <div class="form-group">
+
                         <label for="exampleInputName1">Book Title:</label>
-                        <input type="text" class="form-control" id="exampleInputName1">
+                        <input th:field="*{title}" type="text" class="form-control" id="exampleInputName1">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail3">Author:</label>
-                        <input type="text" class="form-control" id="exampleInputEmail3">
+                        <input th:field="*{author}"type="text" class="form-control" id="exampleInputEmail3">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword4">Publication Date:</label>
-                        <input type="text" class="form-control" id="exampleInputPassword4" >
+                        <input th:field="*{publicationDate}" type="text" class="form-control" id="exampleInputPassword4" >
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputCity1">Category</label>
-                        <input type="text" class="form-control" id="exampleInputCity1" >
+                        <input th:field="*{category}"type="text" class="form-control" id="exampleInputCity1" >
                     </div>
 
                     <div class="form-group">
                         <label for="exampleTextarea1">Book-ID</label>
-                        <input type="text" class="form-control" id="exampleTextarea1" >
+                        <input th:field="*{bookId}"type="text" class="form-control" id="exampleTextarea1" >
                     </div>
 
+                   <div>
                     <button type="submit" class="btn btn-success mr-2">Submit</button>
                     <button class="btn btn-light">Cancel</button>
+                 </div>
                 </form>
             </div>
         </div>

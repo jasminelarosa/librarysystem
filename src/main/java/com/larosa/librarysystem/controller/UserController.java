@@ -44,8 +44,8 @@ public class UserController {
 
     @PostMapping(value = "register")
     public String saveRegister(User user, Model model) {
-        model.addAttribute("user", user);
         if (userRepository.findByStudentEmpId(user.getStudentEmpId()) != null) {
+            model.addAttribute("user", user);
             model.addAttribute("studentIdExists", true);
             return "books/register"; // Return to form if username exists
         }
