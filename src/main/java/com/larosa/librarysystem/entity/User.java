@@ -12,7 +12,7 @@ public class User {
     private Long id;
 
     @Column(unique = true)
-    private String studentId;
+    private String studentEmpId;
 
     private String firstName;
 
@@ -26,5 +26,5 @@ public class User {
 
     private String userType;
 
-    private Boolean confirmed = false;
+    private String status = "pending"; //inactive, active
 }

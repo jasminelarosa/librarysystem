@@ -5,7 +5,7 @@ public class Logbook {
 
     String name;
 
-    String studentId;
+    String userId;
 
     String  yearSection;
 

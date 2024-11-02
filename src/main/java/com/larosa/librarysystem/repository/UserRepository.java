@@ -10,8 +10,9 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Query(value = "SELECT * FROM user WHERE student_id = :studentId LIMIT 1", nativeQuery = true)
-    public User findByStudentId(String studentId);
+    @Query(value = "SELECT * FROM user WHERE student_emp_id = :studentEmpId LIMIT 1", nativeQuery = true)
+    public User findByStudentEmpId(String studentEmpId);
+
 
     @Query(value = "SELECT * FROM user", nativeQuery = true)
     public List<User> getAllUsers();

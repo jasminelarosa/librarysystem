@@ -111,7 +111,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Last Name</label>
                                             <div class="col-sm-9">
-                                                <input th:field="*{lastName}"type="text" class="form-control" />
+                                                <input th:field="*{lastName}" type="text" class="form-control" />
                                             </div>
                                         </div>
                                     </div>
@@ -121,9 +121,9 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">User Type</label>
                                             <div class="col-sm-9">
-                                                <select class="form-control">
-                                                    <option>Student</option>
-                                                    <option>Staff</option>
+                                                <select th:field="*{userType}" class="form-control">
+                                                    <option selected value="student">Student</option>
+                                                    <option value="staff">Staff</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -132,7 +132,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Email address</label>
                                             <div class="col-sm-9">
-                                                <input th:field="*{email}"class="form-control" placeholder=juan@gmail.com />
+                                                <input th:field="*{email}" class="form-control" placeholder=juan@gmail.com />
                                             </div>
                                         </div>
                                     </div>
@@ -143,7 +143,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">ID</label>
                                             <div class="col-sm-9">
-                                                <input type="text" th:field="*{studentId}" class="form-control"  placeholder= "Student Id/ Employee Id" />
+                                                <input type="text" th:field="*{studentEmpId}" class="form-control"  placeholder= "Student Id/ Employee Id" />
                                             </div>
                                             <div th:if="${studentIdExists}" style="color: red;">Student- Id already exists!</div>
                                         </div>
