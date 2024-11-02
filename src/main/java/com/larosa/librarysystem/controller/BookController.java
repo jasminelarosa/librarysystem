@@ -41,32 +41,9 @@ public class BookController {
 
 
 
-
-
     @GetMapping(value = "bookstatus")
     public ModelMap bookstatus() {
         return new ModelMap();
-
-
-
-    /*  @GetMapping(value = "bookstatus")
-    public String uservalidation(Model model) {
-        List<User> users = userRepository.findAll();
-        model.addAttribute("users", users);
-
-        return "books/uservalidation";
-    }
-
-    @PostMapping(value = "users/update-status")
-    public String saveRegister(@RequestParam("studentEmpId") String studentEmpId, @RequestParam("status") String status) {
-        User findUser = userRepository.findByStudentEmpId(studentEmpId);
-        findUser.setStatus(status);
-        userRepository.save(findUser);
-        return "redirect:/books/uservalidation";
-    }
-}
- */
-
 
 
 
