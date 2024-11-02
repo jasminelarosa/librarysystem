@@ -14,6 +14,20 @@
             document.getElementById('studentEmpId').value = userId;
             document.getElementById('confirmForm').action = '/books/users/update-status';
         }
+
+        function performSearch(criteria) {
+            const searchKey = document.getElementById('searchKey').value;
+            const query = new URLSearchParams();
+
+            if (searchKey) {
+                query.set('searchKey', searchKey);
+            }
+
+            query.set('criteria', criteria);
+
+            // Redirect to the new URL with query parameters
+            window.location.href = '?' + query.toString();
+        }
     </script>
 </head>
 <body>
@@ -28,10 +42,21 @@
 
 
                     <div class="search-box">
-                        <label>
-                            <input type="text" placeholder="Search..." />
-                        </label>
-                        <i class="menu-icon mdi mdi-magnify"></i>
+                        <form method="get">
+                            <label>
+                                <input type="text" name="searchKey" th:value="${searchKey}" id="searchKey" placeholder="Search..." />
+                            </label>
+                            <button class="btn btn-warning dropdown-toggle btn-sm" type="button" id="dropdownMenuIconButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="menu-icon mdi mdi-magnify"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton1" style="">
+                                <h6 class="dropdown-header">Search Criteria</h6>
+                                <a class="dropdown-item" href="#" onclick="performSearch('studentEmpId')">Student / Employee ID</a>
+                                <a class="dropdown-item" href="#" onclick="performSearch('status')">Status</a>
+                                <a class="dropdown-item" href="#" onclick="performSearch('name')">Name</a>
+                                <a class="dropdown-item" href="#" onclick="performSearch('userType')">User Type</a>
+                            </div>
+                        </form>
                     </div>
                     <p></p>
                     <div class="table-responsive">

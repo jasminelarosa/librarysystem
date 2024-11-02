@@ -6,7 +6,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
+import org.thymeleaf.util.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -61,9 +63,24 @@ public class UserController {
     }
 
     @GetMapping(value = "uservalidation")
-    public String uservalidation(Model model) {
-        List<User> users = userRepository.findAll();
+    public String uservalidation(@RequestParam(value = "searchKey", required = false) String searchKey
+            , @RequestParam(value = "criteria", required = false) String criteria, Model model) {
+        System.out.println("key:" + searchKey);
+        System.out.println("search:" + criteria);
+        List<User> users = new ArrayList<>();
+        if(StringUtils.isEmpty(searchKey)){
+            users = userRepository.findAll();
+        }else if(StringUtils.isEmpty(criteria)){
+            users = userRepository.findAllByStudentEmpId(searchKey);
+        }else if("studentEmpId".equals(criteria)){
+            users = userRepository.findAllByStudentEmpId(searchKey);
+        }else if("status".equals(criteria)){
+            users = userRepository.findAllByStatus(searchKey);
+        }else if("name".equals(criteria)) {
+            users = userRepository.findAllByFirstName(searchKey);
+        }
         model.addAttribute("users", users);
+        model.addAttribute("searchKey", searchKey);
 
         return "books/uservalidation";
     }
