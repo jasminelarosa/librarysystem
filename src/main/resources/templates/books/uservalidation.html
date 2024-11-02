@@ -23,6 +23,10 @@
                 query.set('searchKey', searchKey);
             }
 
+            if(!criteria){
+                criteria = document.getElementById('criteria').value;
+            }
+
             query.set('criteria', criteria);
 
             // Redirect to the new URL with query parameters
@@ -44,6 +48,7 @@
                     <div class="search-box">
                         <form method="get">
                             <label>
+                                <input type="hidden" name="criteria" th:value="${criteria}" id="criteria" />
                                 <input type="text" name="searchKey" th:value="${searchKey}" id="searchKey" placeholder="Search..." />
                             </label>
                             <button class="btn btn-warning dropdown-toggle btn-sm" type="button" id="dropdownMenuIconButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

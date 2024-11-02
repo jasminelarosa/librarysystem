@@ -22,4 +22,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query(value = "SELECT * FROM user where first_name like %:name% or last_name like %:name%", nativeQuery = true)
     public List<User> findAllByFirstName(String name);
+
+    @Query(value = "SELECT * FROM user where user_type = :userType", nativeQuery = true)
+    public List<User> findAllByUserType(String userType);
 }

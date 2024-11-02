@@ -71,6 +71,7 @@ public class UserController {
         if(StringUtils.isEmpty(searchKey)){
             users = userRepository.findAll();
         }else if(StringUtils.isEmpty(criteria)){
+            criteria = "studentEmpId";
             users = userRepository.findAllByStudentEmpId(searchKey);
         }else if("studentEmpId".equals(criteria)){
             users = userRepository.findAllByStudentEmpId(searchKey);
@@ -78,9 +79,13 @@ public class UserController {
             users = userRepository.findAllByStatus(searchKey);
         }else if("name".equals(criteria)) {
             users = userRepository.findAllByFirstName(searchKey);
+        }else if("userType".equals(criteria)) {
+            users = userRepository.findAllByUserType(searchKey);
         }
+
         model.addAttribute("users", users);
         model.addAttribute("searchKey", searchKey);
+        model.addAttribute("criteria", criteria);
 
         return "books/uservalidation";
     }
