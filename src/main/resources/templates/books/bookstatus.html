@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Home</title>
+</head>
+<body>
+<section layout:fragment="content">
+
+    <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Books</h4>
+
+
+                    <div class="search-box">
+                        <label>
+                            <input type="text" placeholder="Search..." />
+                        </label>
+                        <i class="menu-icon mdi mdi-magnify"></i>
+                    </div>
+                    <p></p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Book-ID</th>
+                                <th>Status</th>
+                                <th>Publication Date</th>
+                                <th>Category</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Jacob</td>
+                                <td>53275531</td>
+                                <td>12 May 2017</td>
+                                <td>
+                                    <label class="badge badge-danger">Pending</label>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Messsy</td>
+                                <td>53275532</td>
+                                <td>15 May 2017</td>
+                                <td>
+                                    <label class="badge badge-warning">In progress</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>53275533</td>
+                                <td>14 May 2017</td>
+                                <td>
+                                    <label class="badge badge-info">Fixed</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Peter</td>
+                                <td>53275534</td>
+                                <td>16 May 2017</td>
+                                <td>
+                                    <label class="badge badge-success">Completed</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dave</td>
+                                <td>53275535</td>
+                                <td>20 May 2017</td>
+                                <td>
+                                    <label class="badge badge-warning">In progress</label>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Computer</h4>
+
+                    <p></p>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Computer</th>
+                                <th>Product</th>
+                                <th>Status</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Jacob</td>
+                                <td>Photoshop</td>
+                                <td>
+                                    <label class="badge badge-danger">Pending</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Messsy</td>
+                                <td>Flash</td>
+                                <td>
+                                    <label class="badge badge-warning">In progress</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>Premier</td>
+                                <td>
+                                    <label class="badge badge-info">Fixed</label>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+</section>
+</body>
+</html>

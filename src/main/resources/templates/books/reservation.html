@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+<head>
+    <title>Home</title>
+</head>
+<body>
+<section layout:fragment="content">
+
+
+    <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Books</h4>
+
+
+                    <div class="search-box">
+                        <label>
+                            <input type="text" placeholder="Search..." />
+                        </label>
+                        <i class="menu-icon mdi mdi-magnify"></i>
+                    </div>
+                    <p></p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Book-ID</th>
+                                <th>Status</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Jacob</td>
+                                <td>12 May 2017</td>
+                                <td>
+                                    <label class="badge badge-danger">Pending</label>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Messy</td>
+                                <td>15 May 2017</td>
+                                <td>
+                                    <label class="badge badge-warning">In progress</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>14 May 2017</td>
+                                <td>
+                                    <label class="badge badge-info">Fixed</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Peter</td>
+                                <td>16 May 2017</td>
+                                <td>
+                                    <label class="badge badge-success">Completed</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dave</td>
+                                <td>20 May 2017</td>
+                                <td>
+                                    <label class="badge badge-warning">In progress</label>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Book Reservation</h4>
+                    <hr>
+                    <p class="card-description">
+                        Book details:
+                    </p>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Book - ID</label>
+                        <input type="text" class="form-control" id="exampleInputPassword4">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Book Title</label>
+                        <input type="text" class="form-control" id="exampleInputPassword4" >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="exampleInputCity1">Reservation Date </label>
+                        <input type="datetime-local" class="form-control" id="exampleInputCity1" >
+                    </div>
+
+                    <hr>
+                    <p class="card-description">
+                        Personal Information:
+                    </p>
+                    <form class="forms-sample">
+                        <div class="form-group">
+                            <label for="exampleInputName1">Student - ID/Employee - ID</label>
+                            <input type="text" class="form-control" id="exampleInputName1"placeholder="00-0000" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputName1">Name</label>
+                            <input type="text" class="form-control" id="exampleInputName1"placeholder="LName, FName MI">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail3">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                        </div>
+
+
+
+                        <button type="submit" class="btn btn-success mr-2">Reserve</button>
+                        <button class="btn btn-light">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+</section>
+</body>
+</html>

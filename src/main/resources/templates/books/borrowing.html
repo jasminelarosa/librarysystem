@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Home</title>
+</head>
+<body>
+<section layout:fragment="content">
+
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Book Borrowing</h4>
+                <form class="form-sample">
+                    <p class="card-description">
+                        Book Details:
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Book-ID</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Book Title</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Borrowed Date</label>
+                                <div class="col-sm-9">
+                                    <input type="datetime-local" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Due Date</label>
+                                <div class="col-sm-9">
+                                    <input type="datetime-local" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <p class="card-description">
+                        Personal Information:
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">ID</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control"  placeholder= "Student Id/ Employee Id" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" placeholder="LName, FName MI"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Email Address</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" placeholder=juan@gmail.com  />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Year/Section</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success mr-2">Borrow</button>
+                        <button class="btn btn-light">Cancel</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Book Returning</h4>
+                <form class="form-sample">
+                    <p class="card-description">
+                        Book Details:
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Book-ID</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Book Title</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Borrowed Date</label>
+                                <div class="col-sm-9">
+                                    <input type="datetime-local" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Return Date</label>
+                                <div class="col-sm-9">
+                                    <input type="datetime-local" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Condition</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control"  />
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="card-description">
+                        Personal Information:
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">ID</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control"  placeholder= "Student Id/ Employee Id" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" placeholder="LName, FName MI"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Email Address</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" placeholder=juan@gmail.com  />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Year/Section</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success mr-2">Return</button>
+                        <button class="btn btn-light">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</section>
+</body>
+</html>
