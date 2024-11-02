@@ -44,11 +44,5 @@ public class BookController {
 
 
 
-    @GetMapping(value = "login")
-    public ModelMap login() {
-        return new ModelMap();}
 
-    @GetMapping(value = "register")
-    public ModelMap register() {
-        return new ModelMap();}
 }
