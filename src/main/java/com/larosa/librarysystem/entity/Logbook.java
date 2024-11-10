@@ -6,20 +6,20 @@ import javax.persistence.*;
 
 @Entity
 @Data
-public class LogBook {
+public class Logbook {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
    private String name;
 
-   private String yearSection;
-
    private String emailAddress;
 
-   private String userId;
+   private String yearSection;
 
-   private String Date;
+   private String studentID;
+
+   private String dateTime;
 
 
 }

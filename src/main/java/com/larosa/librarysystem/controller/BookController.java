@@ -1,7 +1,6 @@
 package com.larosa.librarysystem.controller;
 
 import com.larosa.librarysystem.entity.Book;
-import com.larosa.librarysystem.entity.User;
 import com.larosa.librarysystem.repository.BookRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -20,7 +19,7 @@ public class BookController {
     private final BookRepository bookRepository;
 
 
-    @PostMapping(value = "addbook")
+    @PostMapping(value = "addBook")
     public String newBook(Book book, Model model) {
         if (bookRepository.findByBookId(book.getBookId()) != null) {
             model.addAttribute("bookExist", true);
@@ -30,15 +29,14 @@ public class BookController {
             model.addAttribute("bookAdded", true);
             bookRepository.save(book);
         }
-        return "/Library/addbook";
+        return "/Library/addBook";
     }
 
-    @GetMapping(value = "addbook")
+    @GetMapping(value = "addBook")
     public String getBook(Model model) {
        Book book = new Book();
         model.addAttribute("book", book);
-
-        return "Library/addbook";
+        return "Library/addBook";
     }
 
     @GetMapping(value = "bookstatus")
@@ -47,11 +45,6 @@ public class BookController {
         model.addAttribute("books", book );
         return "Library/bookstatus";
 
-    }
-
-    @GetMapping(value = "logbook")
-    public ModelMap logbook() {
-        return new ModelMap();
     }
 
     @GetMapping(value = "borrowing")

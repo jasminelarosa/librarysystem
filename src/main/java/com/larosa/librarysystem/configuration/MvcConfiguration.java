@@ -9,7 +9,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry viewControllerRegistry) {
-        viewControllerRegistry.addViewController("/").setViewName("redirect:/Library/logbook");
+        viewControllerRegistry.addViewController("/").setViewName("redirect:/Library/addBook");
     }
 
 }
