@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "books")
+@RequestMapping(value = "Library")
 @AllArgsConstructor
 public class UserController {
     private final UserRepository userRepository;
@@ -21,7 +21,7 @@ public class UserController {
     public String login(Model model) {
         User user = new User();
         model.addAttribute("user", user );
-        return "books/login";
+        return "Library/login";
     }
 
     @PostMapping(value = "login")
@@ -29,18 +29,18 @@ public class UserController {
         User foundUser = userRepository.findByStudentEmpId(user.getStudentEmpId());
         if (foundUser == null) {
             model.addAttribute("invalidUserId", true);
-            return "books/login"; // Return to form if username exists
+            return "Library/login"; // Return to form if username exists
         }
         if(user.getPassword().equals(foundUser.getPassword())) {
             if(foundUser.getStatus().equals("active")) {
-                return "books/logbook";
+                return "Library/logbook";
             }else{
                 model.addAttribute("inactiveUser", true);
             }
         }else{
             model.addAttribute("invalidPassword", true);
         }
-        return "books/login";
+        return "Library/login";
 
     }
 
@@ -49,17 +49,17 @@ public class UserController {
         if (userRepository.findByStudentEmpId(user.getStudentEmpId()) != null) {
             model.addAttribute("user", user);
             model.addAttribute("studentIdExists", true);
-            return "books/register"; // Return to form if username exists
+            return "Library/register"; // Return to form if username exists
         }
         userRepository.save(user);
-        return "redirect:/books/login";
+        return "redirect:/Library/login";
     }
 
     @GetMapping(value = "register")
     public String getRegister(Model model) {
         User user = new User();
         model.addAttribute("user", user );
-        return "books/register";
+        return "Library/register";
     }
 
     @GetMapping(value = "uservalidation")
@@ -87,7 +87,7 @@ public class UserController {
         model.addAttribute("searchKey", searchKey);
         model.addAttribute("criteria", criteria);
 
-        return "books/uservalidation";
+        return "Library/uservalidation";
     }
 
     @PostMapping(value = "users/update-status")
@@ -95,6 +95,6 @@ public class UserController {
         User findUser = userRepository.findByStudentEmpId(studentEmpId);
         findUser.setStatus(status);
         userRepository.save(findUser);
-        return "redirect:/books/uservalidation";
+        return "redirect:/Library/uservalidation";
     }
 }

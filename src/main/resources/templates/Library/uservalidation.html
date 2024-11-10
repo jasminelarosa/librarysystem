@@ -12,7 +12,7 @@
             document.getElementById('btnSubmit').innerText = action;
             document.getElementById('status').value = action === 'Activate' ? 'active' : 'inactive';
             document.getElementById('studentEmpId').value = userId;
-            document.getElementById('confirmForm').action = '/books/users/update-status';
+            document.getElementById('confirmForm').action = '/Library/users/update-status';
         }
 
         function performSearch(criteria) {

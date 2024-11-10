@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "books")
+@RequestMapping(value = "Library")
 @AllArgsConstructor
 public class BookController {
     private final BookRepository bookRepository;
@@ -28,7 +28,7 @@ public class BookController {
             model.addAttribute("bookAdded", true);
             bookRepository.save(book);
         }
-        return "/books/addbook";
+        return "/Library/addbook";
     }
 
     @GetMapping(value = "addbook")
@@ -36,17 +36,12 @@ public class BookController {
        Book book = new Book();
         model.addAttribute("book", book);
 
-        return "books/addbook";
+        return "Library/addbook";
     }
-
-
 
     @GetMapping(value = "bookstatus")
     public ModelMap bookstatus() {
         return new ModelMap();
-
-
-
 
     }
     @GetMapping(value = "logbook")
