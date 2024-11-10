@@ -1,19 +1,26 @@
 package com.larosa.librarysystem.entity;
 
-public class Logbook {
+import lombok.Data;
+
+import javax.persistence.*;
+
+@Entity
+@Data
+public class LogBook {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String name;
+   private String name;
 
-    String userId;
+   private String yearSection;
 
-    String  yearSection;
+   private String emailAddress;
 
-    String email;
+   private String userId;
 
-    String password;
+   private String Date;
 
-    String mobileNumber;
 
-    String date;
 }
+
