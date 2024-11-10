@@ -10,17 +10,17 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String title;
+   private String title;
 
-    String author;
+    private String author;
 
-    String bookId;
+    private String bookId;
 
-    Boolean status;
+    private Boolean status;
 
-    String publicationDate;
+    private String publicationDate;
 
-    String category;
+    private  String category;
 
 }
 

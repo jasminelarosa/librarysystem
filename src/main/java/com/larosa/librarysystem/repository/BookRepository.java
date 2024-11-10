@@ -15,5 +15,5 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
 
     @Query(value = "SELECT * FROM book", nativeQuery = true)
-    public List<Book> getAllUsers();
+    public List<Book> findAllBook();
 }

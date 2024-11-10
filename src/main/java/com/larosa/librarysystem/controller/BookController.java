@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping(value = "Library")
 @AllArgsConstructor
@@ -40,10 +42,13 @@ public class BookController {
     }
 
     @GetMapping(value = "bookstatus")
-    public ModelMap bookstatus() {
-        return new ModelMap();
+    public String bookStatus( Model model) {
+        List<Book> book = bookRepository.findAllBook();
+        model.addAttribute("books", book );
+        return "Library/bookstatus";
 
     }
+
     @GetMapping(value = "logbook")
     public ModelMap logbook() {
         return new ModelMap();
@@ -61,15 +66,6 @@ public class BookController {
     public ModelMap reservation() {
         return new ModelMap();
     }
-
-
-
-
-    @GetMapping(value = "registration")
-    public ModelMap registration() {
-        return new ModelMap();
-    }
-
 
 
 

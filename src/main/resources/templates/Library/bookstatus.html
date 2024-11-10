@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html layout:decorate="~{layout}"
+<html layout:decorate="~{layout}" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <title>Home</title>
@@ -34,23 +34,13 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Jacob</td>
-                                <td>53275531</td>
-                                <td>12 May 2017</td>
-                                <td>
-                                    <label class="badge badge-danger">Pending</label>
-                                </td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr th:each="user : ${users}">
-                                <td th:text="${user.firstName}"></td>
-                                <td th:text="${user.lastName}"></td>
-                                <td th:text="${user.email}"></td>
-                                <td th:text="${user.studentEmpId}"></td>
-                                <td th:text="${user.mobileNumber}"></td>
-                                <td>
+                            <tr th:each="book : ${books}">
+                                <td th:text="${book.title}"></td>
+                                <td th:text="${book.author}"></td>
+                                <td th:text="${book.bookId}"></td>
+                                <td th:text="${book.status}"></td>
+                                <td th:text="${book.publicationDate}"></td>
+                                <td th:text="${book.category}"></td>
 
                             </tbody>
                         </table>
