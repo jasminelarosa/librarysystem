@@ -17,17 +17,17 @@ public class LogbookController {
 
     @PostMapping(value = "logbook")
     public String newLogbook(Logbook logbook, Model model) {
-        System.out.println("Year/Section: " + logbook.getYearSection());
+
         logBookRepository.save(logbook);
-        model.addAttribute("attendance", new Logbook());
+        model.addAttribute("logbook", new Logbook());
         model.addAttribute("logAdded", true);
         return "Library/logbook";
     }
 
     @GetMapping(value = "logbook")
     public String getLogbook(Model model) {
-        Logbook Logbook = new Logbook();
-        model.addAttribute("attendance", Logbook);
+        Logbook logbook = new Logbook();
+        model.addAttribute("logbook", logbook);
         return "Library/logbook";
     }
 

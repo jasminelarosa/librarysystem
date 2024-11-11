@@ -3,6 +3,7 @@ package com.larosa.librarysystem.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -13,9 +14,9 @@ public class Logbook {
 
    private String name;
 
-   private String emailAddress;
-
    private String yearSection;
+
+   private String emailAddress;
 
    private String studentID;
 
